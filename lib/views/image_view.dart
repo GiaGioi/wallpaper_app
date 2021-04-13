@@ -67,15 +67,21 @@ class _ImageViewState extends State<ImageView> {
                               ])),
                           child: Column(
                             children: <Widget>[
-                              Text(
-                                "Set Wallpaper",
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.white70),
+                              Expanded(
+                                flex: 3,
+                                child: Text(
+                                  "Set Wallpaper",
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.white70),
+                                ),
                               ),
-                              Text(
-                                "Imgae will be saved in gallery",
-                                style: TextStyle(
-                                    fontSize: 10, color: Colors.white70),
+                              Expanded(
+                                flex: 2,
+                                child: Text(
+                                  "Imgae will be saved in gallery",
+                                  style: TextStyle(
+                                      fontSize: 10, color: Colors.white70),
+                                ),
                               ),
                             ],
                           )),
