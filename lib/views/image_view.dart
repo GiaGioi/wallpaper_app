@@ -66,16 +66,12 @@ class _ImageViewState extends State<ImageView> {
                                 Color(0x0FFFFFFF),
                               ])),
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Text(
                                 "Set Wallpaper",
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white70),
-                              ),
-                              Text(
-                                "Imgae will be saved in gallery",
-                                style: TextStyle(
-                                    fontSize: 10, color: Colors.white70),
                               ),
                             ],
                           )),
@@ -83,9 +79,14 @@ class _ImageViewState extends State<ImageView> {
                   ),
                 ),
                 SizedBox(height: 16),
-                Text(
-                  "Cancel",
-                  style: TextStyle(color: Colors.white),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "Cancel",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
                 SizedBox(height: 50)
               ],
@@ -114,8 +115,8 @@ class _ImageViewState extends State<ImageView> {
           */
       await PermissionHandler().requestPermissions([PermissionGroup.photos]);
     } else {
-      /* PermissionStatus permission = */ await PermissionHandler()
-          .checkPermissionStatus(PermissionGroup.storage);
+      // PermissionStatus permission =
+      await PermissionHandler().checkPermissionStatus(PermissionGroup.storage);
     }
   }
 }
