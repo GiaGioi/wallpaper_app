@@ -73,6 +73,11 @@ class _ImageViewState extends State<ImageView> {
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white70),
                               ),
+                              Text(
+                                "Imgae will be saved in gallery",
+                                style: TextStyle(
+                                    fontSize: 10, color: Colors.white70),
+                              ),
                             ],
                           )),
                     ],
@@ -115,8 +120,8 @@ class _ImageViewState extends State<ImageView> {
           */
       await PermissionHandler().requestPermissions([PermissionGroup.photos]);
     } else {
-      // PermissionStatus permission =
-      await PermissionHandler().checkPermissionStatus(PermissionGroup.storage);
+      /* PermissionStatus permission = */ await PermissionHandler()
+          .checkPermissionStatus(PermissionGroup.storage);
     }
   }
 }
