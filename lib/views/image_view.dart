@@ -66,22 +66,17 @@ class _ImageViewState extends State<ImageView> {
                                 Color(0x0FFFFFFF),
                               ])),
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Expanded(
-                                flex: 3,
-                                child: Text(
-                                  "Set Wallpaper",
-                                  style: TextStyle(
-                                      fontSize: 16, color: Colors.white70),
-                                ),
+                              Text(
+                                "Set Wallpaper",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white70),
                               ),
-                              Expanded(
-                                flex: 2,
-                                child: Text(
-                                  "Imgae will be saved in gallery",
-                                  style: TextStyle(
-                                      fontSize: 10, color: Colors.white70),
-                                ),
+                              Text(
+                                "Imgae will be saved in gallery",
+                                style: TextStyle(
+                                    fontSize: 10, color: Colors.white70),
                               ),
                             ],
                           )),
@@ -89,9 +84,14 @@ class _ImageViewState extends State<ImageView> {
                   ),
                 ),
                 SizedBox(height: 16),
-                Text(
-                  "Cancel",
-                  style: TextStyle(color: Colors.white),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "Cancel",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
                 SizedBox(height: 50)
               ],
